@@ -1,6 +1,5 @@
 #!/bin/sh
 
-
 sudo docker run \
     --rm \
     --device $(tty) \
@@ -9,14 +8,6 @@ sudo docker run \
     --privileged \
     --volume=/dev/:/dev/ \
     --user 1000:1000 \
-    -it \
     bookworm-wayland:latest \ 
         cage -- cog google.com 
-
-    --device /dev/dri \
-    --device /dev/input \
-
-#    agetty --autologin root \
-#        --login-options '' \
-#	--login-program /usr/bin/weston $(tty | sed 's/dev\///')
 
