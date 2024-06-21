@@ -8,6 +8,8 @@ sudo docker run \
     --privileged \
     --volume=/dev/:/dev/ \
     --user 1000:1000 \
+    -e WLR_NO_HARDWARE_CURSORS=1 \
+    -e WLR_LIBINPUT_NO_DEVICES=1 \
     bookworm-wayland:latest \ 
         cage -- cog google.com 
 
